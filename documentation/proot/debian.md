@@ -147,29 +147,29 @@ sudo apt install kde-plasma-desktop -y
 - Xfce4
 
 ```bash
-wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/main/scripts/proot/debian/startxfce_debian.sh
+wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/refs/heads/master/scripts/proot/debian/startxfce_debian.sh
 ```
 
 - Lxde
 
 ```bash
-wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/main/scripts/proot/debian/startlxde_debian.sh
+wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startlxde_debian.sh
 ```
 
 - Cinamon
 
 ```bash
-wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/main/scripts/proot/debian/startcinnamon_debian.sh
+wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startcinnamon_debian.sh
 ```
 
 - Gnome
 
 ```bash
-wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/main/scripts/proot/debian/startgnome_debian.sh
+wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startgnome_debian.sh
 ```
 
 - KDE Plasma
 
 ```bash
-wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/main/scripts/proot/debian/startkde_debian.sh
+wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startkde_debian.sh
 ```
