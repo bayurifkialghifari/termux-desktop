@@ -28,6 +28,22 @@ pd login debian
 
 <br>
 
+## ⚙️ Update nameserver
+
+Update nameserver using the following command:
+
+```bash
+echo -e "nameserver 1.1.1.1" > /etc/resolv.conf
+```
+
+<br>
+
+---
+
+---
+
+<br>
+
 ## 🖥️ Update Repository and install packages
 
 Update and upgrade the repository and install required packages using the following command:
