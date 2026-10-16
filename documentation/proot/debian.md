@@ -159,7 +159,7 @@ wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/mast
 - Cinamon
 
 ```bash
-wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startcinnamon_debian.sh
+wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startcinamon_debian.sh
 ```
 
 - Gnome
