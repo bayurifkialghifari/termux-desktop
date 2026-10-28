@@ -47,7 +47,7 @@ pkg update \
 Select One of the following distros to install:
 
 1. [Proot Distro](documentation)
-   - [Debian](documentation/proot/debian.md)
+    - [Debian](documentation/proot/debian.md)
 
 <br>
 
@@ -56,5 +56,11 @@ Select One of the following distros to install:
 ---
 
 <br>
+
+## 🚀 Hardware Acceleration <a name=hardware-acceleration></a>
+
+Hardware acceleration is not active by default in Termux. In order to enable it, you need to follow the instructions in the guide.
+
+[Hardware Acceleration](documentation/HardwareAcceleration.md)
 
 Inspired by [Droidmaster](https://github.com/LinuxDroidMaster/Termux-Desktops)
