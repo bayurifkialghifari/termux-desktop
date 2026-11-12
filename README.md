@@ -1,6 +1,6 @@
 # Termux Desktops
 
-Collection of scripts to install and run desktop environments in Termux.
+Collection of scripts and guides for installing and running desktop environments in Termux.
 
 <br>
 
@@ -48,6 +48,12 @@ Select One of the following distros to install:
 
 1. [Proot Distro](documentation)
     - [Debian](documentation/proot/debian.md)
+    - [Arch Linux / Arch Linux ARM](documentation/proot/archlinux.md)
+        - [LXDE](documentation/proot/archlinux.md#lxde)
+        - [Xfce](documentation/proot/archlinux.md#xfce)
+        - [GNOME](documentation/proot/archlinux.md#gnome)
+        - [KDE Plasma](documentation/proot/archlinux.md#kde-plasma)
+        - [Hyprland](documentation/proot/archlinux.md#hyprland)
 
 <br>
 
