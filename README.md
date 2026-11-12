@@ -68,6 +68,18 @@ Select One of the following distros to install:
 
 <br>
 
+## 🍷 Install Wine <a name=install-wine></a>
+
+[Wine + Box64](documentation/proot/wine.md)
+
+<br>
+
+---
+
+---
+
+<br>
+
 ## 🚀 Hardware Acceleration <a name=hardware-acceleration></a>
 
 Hardware acceleration is not active by default in Termux. In order to enable it, you need to follow the instructions in the guide.
