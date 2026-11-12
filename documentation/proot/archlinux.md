@@ -209,7 +209,7 @@ Hyprland needs GPU/DRM and DMA-BUF support. Its start script checks these requir
 
 ## ⬇️ Script to start Desktop Environment
 
-Leave Arch, then download and run your chosen script **in Termux**:
+Leave Arch, then download your chosen script **in Termux**:
 
 ```bash
 exit
@@ -219,7 +219,6 @@ exit
 
 ```bash
 wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/archlinux/startxfce_archlinux.sh
-bash startxfce_archlinux.sh
 ```
 
 <br>
@@ -228,7 +227,6 @@ bash startxfce_archlinux.sh
 
 ```bash
 wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/archlinux/startkde_archlinux.sh
-bash startkde_archlinux.sh
 ```
 
 <br>
@@ -237,7 +235,6 @@ bash startkde_archlinux.sh
 
 ```bash
 wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/archlinux/startlxde_archlinux.sh
-bash startlxde_archlinux.sh
 ```
 
 <br>
@@ -246,7 +243,6 @@ bash startlxde_archlinux.sh
 
 ```bash
 wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/archlinux/startgnome_archlinux.sh
-bash startgnome_archlinux.sh
 ```
 
 <br>
@@ -255,7 +251,6 @@ bash startgnome_archlinux.sh
 
 ```bash
 wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/archlinux/starthyprland_archlinux.sh
-bash starthyprland_archlinux.sh
 ```
 
 <br>
