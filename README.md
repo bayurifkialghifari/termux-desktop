@@ -48,11 +48,16 @@ Select One of the following distros to install:
 
 1. [Proot Distro](documentation)
     - [Debian](documentation/proot/debian.md)
+        - [Xfce4](documentation/proot/debian.md#xfce)
+        - [KDE Plasma](documentation/proot/debian.md#kde-plasma)
+        - [LXDE](documentation/proot/debian.md#lxde)
+        - [GNOME](documentation/proot/debian.md#gnome)
+        - [Cinnamon](documentation/proot/debian.md#cinnamon)
     - [Arch Linux / Arch Linux ARM](documentation/proot/archlinux.md)
-        - [LXDE](documentation/proot/archlinux.md#lxde)
-        - [Xfce](documentation/proot/archlinux.md#xfce)
-        - [GNOME](documentation/proot/archlinux.md#gnome)
+        - [Xfce4](documentation/proot/archlinux.md#xfce)
         - [KDE Plasma](documentation/proot/archlinux.md#kde-plasma)
+        - [LXDE](documentation/proot/archlinux.md#lxde)
+        - [GNOME](documentation/proot/archlinux.md#gnome)
         - [Hyprland](documentation/proot/archlinux.md#hyprland)
 
 <br>

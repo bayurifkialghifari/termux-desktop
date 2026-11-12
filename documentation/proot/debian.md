@@ -1,7 +1,7 @@
 # Proot Debian Installation
 
-- [Install Termux + Termux X11](../../README.md#-first-step)
-- [Install Required Termux Packages](../../README.md#-install-required-termux-packages)
+- [Install Termux + Termux X11](../../README.md#first-step)
+- [Install Required Termux Packages](../../README.md#install-required-termux-packages)
 
 <br>
 
@@ -99,25 +99,31 @@ sudo whoami
 
 ## Select One Desktop Environment to install
 
-Xfce4 Desktop Environment
+Xfce4 Desktop Environment <a name=xfce></a>
 
 ```bash
 sudo apt install -y xfce4
 ```
 
-Lxde Desktop Environment
+<br>
+
+KDE Plasma Desktop Environment <a name=kde-plasma></a>
+
+```bash
+sudo apt install kde-plasma-desktop -y
+```
+
+<br>
+
+LXDE Desktop Environment <a name=lxde></a>
 
 ```bash
 sudo apt install -y lxde
 ```
 
-Cinamon Desktop Environment
+<br>
 
-```bash
-sudo apt install -y cinnamon
-```
-
-Gnome Desktop Environment
+GNOME Desktop Environment <a name=gnome></a>
 
 ```bash
 sudo apt install gnome gnome-shell gnome-terminal gnome-tweaks gnome-software nautilus gnome-shell-extension-manager gedit gnupg2 dbus-x11 -y
@@ -128,10 +134,12 @@ for file in $(find /usr -type f -iname "*login1*"); do rm -rf $file
 done
 ```
 
-KDE Plasma Desktop Environment
+<br>
+
+Cinnamon Desktop Environment <a name=cinnamon></a>
 
 ```bash
-sudo apt install kde-plasma-desktop -y
+sudo apt install -y cinnamon
 ```
 
 <br>
@@ -147,29 +155,37 @@ sudo apt install kde-plasma-desktop -y
 - Xfce4
 
 ```bash
-wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/refs/heads/master/scripts/proot/debian/startxfce_debian.sh
+wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startxfce_debian.sh
 ```
 
-- Lxde
-
-```bash
-wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startlxde_debian.sh
-```
-
-- Cinamon
-
-```bash
-wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startcinamon_debian.sh
-```
-
-- Gnome
-
-```bash
-wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startgnome_debian.sh
-```
+<br>
 
 - KDE Plasma
 
 ```bash
 wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startkde_debian.sh
+```
+
+<br>
+
+- LXDE
+
+```bash
+wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startlxde_debian.sh
+```
+
+<br>
+
+- GNOME
+
+```bash
+wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startgnome_debian.sh
+```
+
+<br>
+
+- Cinnamon
+
+```bash
+wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/debian/startcinamon_debian.sh
 ```
