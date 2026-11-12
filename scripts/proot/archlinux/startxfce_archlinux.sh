@@ -33,6 +33,8 @@ export TMPDIR=/tmp
 export XDG_RUNTIME_DIR="$HOME/.local/run"
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
+# PRoot cannot run the namespaces used by Glycin image-loader sandboxing.
+export GLYCIN_DISABLE_SANDBOX=i-know-the-risks
 mkdir -p "$XDG_RUNTIME_DIR"
 chmod 700 "$XDG_RUNTIME_DIR"
 unset WAYLAND_DISPLAY SESSION_MANAGER DBUS_SESSION_BUS_ADDRESS

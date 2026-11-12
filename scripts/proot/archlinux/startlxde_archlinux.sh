@@ -1,11 +1,14 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-# Start LXDE in the Arch Linux ARM PRoot container.
-set -euo pipefail
+# Start LXDE in Arch using the same login sequence as the Debian launcher.
+set -e
 
-# Pass a username as the first argument to override wowo.
 desktop_user="${1:-wowo}"
 : "${TMPDIR:?Run this script inside Termux}"
+
+# Stop the previous X11 session before starting a fresh display.
+pkill -f "[t]ermux.x11" 2>/dev/null || true
+sleep 1
 
 # Enable PulseAudio over localhost.
 pulseaudio --start --exit-idle-time=-1
@@ -14,35 +17,43 @@ if ! pactl list short modules | grep -F "module-native-protocol-tcp" >/dev/null;
         auth-ip-acl=127.0.0.1 listen=127.0.0.1 >/dev/null
 fi
 
-# Start Termux:X11, or reuse it when switching desktops.
-if [ ! -S "$TMPDIR/.X11-unix/X0" ]; then
-    XDG_RUNTIME_DIR="$TMPDIR" termux-x11 :0 > "$HOME/termux-x11.log" 2>&1 &
+# Prepare Termux:X11 and open its Android activity.
+export XDG_RUNTIME_DIR="$TMPDIR"
+termux-x11 :0 > "$HOME/termux-x11.log" 2>&1 &
+sleep 3
+am start --user 0 -n com.termux.x11/com.termux.x11.MainActivity >/dev/null 2>&1
+sleep 1
+
+# Enter PRoot as root, then switch users before setting the display environment.
+proot-distro login archlinux --shared-tmp -- /bin/su - "$desktop_user" -c '
+set -e
+export DISPLAY=:0
+export PULSE_SERVER=tcp:127.0.0.1:4713
+export TMPDIR=/tmp
+export XDG_RUNTIME_DIR="$HOME/.local/run"
+export XDG_SESSION_TYPE=x11
+export GDK_BACKEND=x11
+# PRoot cannot run the namespaces used by Glycin image-loader sandboxing.
+export GLYCIN_DISABLE_SANDBOX=i-know-the-risks
+mkdir -p "$XDG_RUNTIME_DIR"
+chmod 700 "$XDG_RUNTIME_DIR"
+unset WAYLAND_DISPLAY SESSION_MANAGER DBUS_SESSION_BUS_ADDRESS
+
+if ! command -v xdpyinfo >/dev/null 2>&1; then
+    printf "%s\n" "Install xorg-xdpyinfo inside Arch before starting LXDE." >&2
+    exit 1
 fi
 
+# Check the connection inside Arch rather than relying on a socket file existing.
 for attempt in {1..15}; do
-    if [ -S "$TMPDIR/.X11-unix/X0" ]; then
-        break
+    if xdpyinfo -display "$DISPLAY" >/dev/null 2> "$HOME/lxde-display.log"; then
+        exec dbus-run-session -- startlxde
     fi
     sleep 1
 done
 
-if [ ! -S "$TMPDIR/.X11-unix/X0" ]; then
-    printf "%s\n" "Termux:X11 did not start. Check $HOME/termux-x11.log." >&2
-    exit 1
-fi
-
-# Open the Termux:X11 Android activity.
-am start --user 0 -n com.termux.x11/com.termux.x11.MainActivity >/dev/null 2>&1
-
-# Log in as the desktop user with the shared X11 socket and a private D-Bus session.
-proot-distro login archlinux --user "$desktop_user" --shared-tmp -- \
-    /usr/bin/env DISPLAY=:0 PULSE_SERVER=tcp:127.0.0.1:4713 \
-    /usr/bin/dbus-run-session -- /bin/bash -c '
-set -euo pipefail
-export XDG_RUNTIME_DIR="$HOME/.local/run"
-mkdir -p "$XDG_RUNTIME_DIR"
-chmod 700 "$XDG_RUNTIME_DIR"
-unset WAYLAND_DISPLAY
-
-exec startlxde
+printf "%s\n" "Cannot connect to Termux:X11 on $DISPLAY." \
+    "Check ~/lxde-display.log in Arch and ~/termux-x11.log in Termux." >&2
+cat "$HOME/lxde-display.log" >&2
+exit 1
 '

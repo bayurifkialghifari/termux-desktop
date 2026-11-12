@@ -88,7 +88,7 @@ Update Arch and install the required packages **as root**:
 ```bash
 pacman -Syu \
 && pacman -S --needed sudo dbus mesa mesa-utils xorg-xauth xorg-xdpyinfo \
-  ttf-dejavu nano shadow \
+  gdk-pixbuf2 glycin librsvg ttf-dejavu nano shadow \
 && dbus-uuidgen --ensure=/etc/machine-id
 ```
 
@@ -101,6 +101,18 @@ pacman -Sy --needed archlinuxarm-keyring && pacman -Su
 ```
 
 Do not install other packages between these commands or disable signature checks.
+
+<br>
+
+GTK icon or SVG loader error?
+
+Update the image loaders **inside Arch as root**, then download the latest start script:
+
+```bash
+pacman -Syu --needed gdk-pixbuf2 glycin librsvg
+```
+
+The launchers [disable Glycin image-loader sandboxing](https://gitlab.gnome.org/GNOME/glycin/-/blob/2.2.6/glycin-core/src/util.rs#L150) for PRoot compatibility. Image loaders run without that isolation during the desktop session.
 
 <br>
 
