@@ -49,6 +49,22 @@ pd login archlinux --shared-tmp
 
 <br>
 
+## ⚙️ Update nameserver
+
+Update the nameserver inside Arch as root:
+
+```bash
+echo -e "nameserver 1.1.1.1" > /etc/resolv.conf
+```
+
+<br>
+
+---
+
+---
+
+<br>
+
 ## ⚙️ Initialize Keyring
 
 Run the following commands **inside Arch as root**:
@@ -72,7 +88,7 @@ Update Arch and install the required packages **as root**:
 
 ```bash
 pacman -Syu \
-&& pacman -S --needed dbus mesa mesa-utils xorg-xauth xorg-xdpyinfo \
+&& pacman -S --needed sudo dbus mesa mesa-utils xorg-xauth xorg-xdpyinfo \
   ttf-dejavu nano shadow \
 && dbus-uuidgen --ensure=/etc/machine-id
 ```
@@ -102,6 +118,27 @@ Create the user that the start scripts will use:
 ```bash
 useradd -m -s /bin/bash wowo
 passwd wowo
+```
+
+Add the user to sudoers:
+
+```bash
+echo "wowo ALL=(ALL:ALL) ALL" >> /etc/sudoers
+```
+
+Add the user to the wheel group:
+
+```bash
+usermod -aG wheel wowo
+```
+
+Test the user and sudo, then return to the root shell:
+
+```bash
+su - wowo
+whoami
+sudo whoami
+exit
 ```
 
 The scripts default to `wowo`. Pass another username as the first script argument if needed.
