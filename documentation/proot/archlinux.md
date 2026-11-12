@@ -16,7 +16,6 @@
 Install Arch and log in using the following commands **in Termux**. This example is for PRoot-Distro 5 or later:
 
 ```bash
-uname -m
 pd --version
 
 curl -fL -o archlinux-aarch64-pd-v4.29.0.tar.xz \
