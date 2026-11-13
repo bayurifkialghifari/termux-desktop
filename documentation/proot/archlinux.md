@@ -162,7 +162,7 @@ The scripts default to `wowo`. Pass another username as the first script argumen
 
 <br>
 
-## Select One Desktop Environment to install
+## Select One Desktop Environment or Window Manager to install
 
 Run your chosen command **inside Arch as root**.
 
@@ -199,6 +199,21 @@ pacman -Syu --needed gnome-shell gnome-control-center nautilus \
 ```
 
 GNOME development mode is experimental in PRoot.
+
+<br>
+
+i3 Tiling Window Manager <a name=i3></a>
+
+```bash
+pacman -Syu --needed i3-wm i3status dmenu xterm
+```
+
+i3 uses Termux:X11 directly and works without GPU acceleration.
+
+On first start, create the default config and choose Alt or Super as `$mod`.
+
+- `$mod+Enter`: Terminal
+- `$mod+d`: App launcher
 
 <br>
 
@@ -259,6 +274,14 @@ wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/mast
 
 <br>
 
+- i3
+
+```bash
+wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/master/scripts/proot/archlinux/starti3_archlinux.sh
+```
+
+<br>
+
 - Hyprland
 
 ```bash
@@ -275,7 +298,7 @@ wget -4 https://raw.githubusercontent.com/bayurifkialghifari/termux-desktop/mast
 
 ## Compatibility notes
 
-- Xfce4 and LXDE use Termux:X11 directly.
+- Xfce4, LXDE and i3 use Termux:X11 directly.
 - KDE runs a basic Plasma shell inside Weston with software rendering.
 - GNOME selects `--devkit` or `--nested` when available; it does not start a complete systemd session.
 - Hyprland uses GPU-rendered Weston and requires a usable DRM render node plus `zwp_linux_dmabuf_v1`. Pixman/llvmpipe alone is insufficient.

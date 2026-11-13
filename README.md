@@ -58,6 +58,7 @@ Select One of the following distros to install:
         - [KDE Plasma](documentation/proot/archlinux.md#kde-plasma)
         - [LXDE](documentation/proot/archlinux.md#lxde)
         - [GNOME](documentation/proot/archlinux.md#gnome)
+        - [i3](documentation/proot/archlinux.md#i3)
         - [Hyprland](documentation/proot/archlinux.md#hyprland)
 
 <br>
